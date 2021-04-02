@@ -413,7 +413,7 @@
             if(next!=null && next.length > 0)
                 body.append($("<div>").append("<b>Upcoming : </b> <span style='font-weight:bold;color:#FFF;'>" + next[0].toLocaleString('default',{ year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: "2-digit" }) + "</span>"));
             if(e.link !=null && e.link.text != "")
-                body.append($("<div>").prop('style','text-align:center;padding:10px;').append($("<a>").append(e.link.text).prop('href',e.link.url).prop('style', 'font-weight:bold;font-size:1.2em')));
+                body.append($("<div>").prop('style','text-align:center;padding:10px;').append($("<a>").addClass('btn btn-md btn-info display-4').append(e.link.text).prop('href',e.link.url).prop('style', 'font-weight:bold;font-size:1.2em')));
             if(next!=null && next.length > 1){
                 var dates = "";
                 var toDates = next.length > 4 ? 3: next.length;
