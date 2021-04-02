@@ -31,6 +31,6 @@ jobs:
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: ${{ secrets.FTP_SERVER_DIR }}
-          log-level: verbose
+          log-level: standard
           local-dir: ./
 
