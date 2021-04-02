@@ -27,11 +27,10 @@ jobs:
       - name: FTP Deploy
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
         with:
-          # ftp server
           server: ${{ secrets.FTP_SERVER }}
-          # ftp username
           username: ${{ secrets.FTP_USER }}
-          # ftp password
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: ${{ secrets.FTP_SERVER_DIR }}
+          log-level: debug
+          local-dir: ./
 
