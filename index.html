@@ -2,16 +2,12 @@
 <html>
 
 <head>
-
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
     <link rel="shortcut icon" href="assets/images/121490148-340308567060299-1810678619275771283-n-80x80.jpg"
         type="image/x-icon">
     <meta name="description" content="">
-
-
     <title>Home | Care Leavers Community</title>
     <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
     <link rel="stylesheet" href="assets/tether/tether.min.css">
@@ -29,10 +25,6 @@
     <link rel="stylesheet" href="assets/theme/css/style.css">
     <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css">
     <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
-
-
-
-
     <style type="text/css">
         <!--
         .style1 {
@@ -177,6 +169,29 @@
         </div>
     </section>
 
+    <section style="background-color: rgb(250, 250, 250); padding-top: 40px; padding-bottom: 40px;">
+        <div class="container container_toggle">
+            <div class="row">
+                <div class="col">
+                    <div class="row justify-content-center">
+                        <div class="col-md-12 col-lg-10">
+                            <div class="mbr-section-btn align-center">
+                                <h1 class="inst__title align-center mbr-fonts-style display-5">
+                                    <strong>International Care Leavers Convention, 2020 Reports</strong>
+                                </h1>
+                                <div class="mbr-section-subtitle align-left mbr-fonts-style display-7" style="text-align: center;">
+                                    Reports available at Events ->
+                                    International Care Leavers Convention 2020.
+                                </div>
+                                <a class="btn btn-danger display-4" href="convention.html#reports">Read Reports</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="extFeatures cid-sik3N78G79" id="extFeatures26-4i">
         <div class="container">
             <h2 class="mbr-section-title align-left mbr-fonts-style mbr-bold display-5">Latest News</h2>
@@ -248,7 +263,6 @@
     </section>
 
     <section class="content11 cid-sivzwSbhTg" id="content11-6a">
-
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-12 col-lg-10">
@@ -266,7 +280,8 @@
             <div class="row">
                 <div class="col">
                     <div class="inst">
-                        <h1 class="inst__title align-center mbr-fonts-style display-5"><strong>Voices of Care Leavers</strong></h1>
+                        <h1 class="inst__title align-center mbr-fonts-style display-5"><strong>Voices of Care
+                                Leavers</strong></h1>
                         <div class="inst__content"></div>
 
                     </div>
@@ -403,35 +418,35 @@
             var today = new Date();
             var previous = e.dates.filter(function (d) { return d < today; }).sort().reverse();
             var next = e.dates.filter(function (d) { return d > today; }).sort();
-            
+
             var wrapper = $("<div>").addClass('card-wrapper');
-            var image = $("<div>").addClass("card-img").append($("<img>").prop('src',e.img));
+            var image = $("<div>").addClass("card-img").append($("<img>").prop('src', e.img));
             wrapper.append(image);
 
-            var body = $("<div>").addClass("body").prop('style','padding: 10px;').append($("<h4>").append(e.name).prop('style', 'color:#FFF;'))
-            .append($("<div>").append(e.desc));
-            if(next!=null && next.length > 0)
-                body.append($("<div>").append("<b>Upcoming : </b> <span style='font-weight:bold;color:#FFF;'>" + next[0].toLocaleString('default',{ year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: "2-digit" }) + "</span>"));
-            if(e.link !=null && e.link.text != "")
-                body.append($("<div>").prop('style','text-align:center;padding:10px;').append($("<a>").addClass('btn btn-md btn-info display-4').append(e.link.text).prop('href',e.link.url).prop('style', 'font-weight:bold;font-size:1.2em')));
-            if(next!=null && next.length > 1){
+            var body = $("<div>").addClass("body").prop('style', 'padding: 10px;').append($("<h4>").append(e.name).prop('style', 'color:#FFF;'))
+                .append($("<div>").append(e.desc));
+            if (next != null && next.length > 0)
+                body.append($("<div>").append("<b>Upcoming : </b> <span style='font-weight:bold;color:#FFF;'>" + next[0].toLocaleString('default', { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: "2-digit" }) + "</span>"));
+            if (e.link != null && e.link.text != "")
+                body.append($("<div>").prop('style', 'text-align:center;padding:10px;').append($("<a>").addClass('btn btn-md btn-info display-4').append(e.link.text).prop('href', e.link.url).prop('style', 'font-weight:bold;font-size:1.2em')));
+            if (next != null && next.length > 1) {
                 var dates = "";
-                var toDates = next.length > 4 ? 3: next.length;
+                var toDates = next.length > 4 ? 3 : next.length;
                 for (var n = 1; n < next.length; n++) {
-                    dates = dates!= "" ? dates + ", " : "";
-                    dates += next[n].toLocaleString('default',dateOptions);
+                    dates = dates != "" ? dates + ", " : "";
+                    dates += next[n].toLocaleString('default', dateOptions);
                 }
-                if(dates!="")
+                if (dates != "")
                     body.append($("<div>").append("<b>Next : </b>" + dates));
             }
-            if(previous != null && previous.length > 0){
-                var toDates = previous.length > 3 ? 3: previous.length;
+            if (previous != null && previous.length > 0) {
+                var toDates = previous.length > 3 ? 3 : previous.length;
                 var dates = "";
                 for (var n = 0; n < previous.length; n++) {
-                    dates = dates!= "" ? dates + ", " : "";
-                    dates += previous[n].toLocaleString('default',dateOptions);
+                    dates = dates != "" ? dates + ", " : "";
+                    dates += previous[n].toLocaleString('default', dateOptions);
                 }
-                if(dates!="")
+                if (dates != "")
                     body.append($("<div>").append("<b>Previous : </b>" + dates));
             }
             wrapper.append(body);
