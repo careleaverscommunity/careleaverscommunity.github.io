@@ -213,12 +213,9 @@
     </section>
 
     <section class="content9 cid-sijTnfYBHF" id="content9-4b">
-
-
         <div class="container">
             <div class="row justify-content-center">
                 <div class="counter-container col-md-12 col-lg-10">
-
                     <div class="mbr-text mbr-fonts-style display-7">
                         <ol>
                             <li><strong>How do I connect with the larger world? – The need for Networking: </strong><a
@@ -247,6 +244,45 @@
             </div>
         </div>
     </section>
+
+    <section class="content10 cid-sfsffs" id="reports">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="title col-md-12 col-lg-10">
+                    <h3 class="mbr-section-title mbr-fonts-style align-center mb-4 display-5">
+                        <strong>Convention Report and Policy Briefs</strong>
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="content9 cid-siiZuSvcvF" id="content9-2d">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="reports-container col-md-12 col-lg-10">
+                    <div class="mbr-text mbr-fonts-style display-7">
+                        <p>Please find the policy briefs and report of the first International Care Leavers Convention,
+                            2020.</p>
+                        <ol>
+                            <li>
+                                <strong>Care Leavers Convention Event Report </strong><a
+                                    href="assets/files/CLC_Report.pdf" class="text-primary"> Read Report</a>
+                            </li>
+                            <li>
+                                <strong>A Brief for Practitioners</strong><a href="assets/files/Practioners_Brief.pdf"
+                                    class="text-primary"> Read Report</a>
+                            </li>
+                            <li>
+                                <strong>A Brief for Policy Makers </strong><a
+                                    href="assets/files/Policy_Makers_Brief.pdf" class="text-primary"> Read Report</a>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="content10 cid-sfsffs" id="content4-50">
         <div class="container">
             <div class="row justify-content-center">
@@ -258,8 +294,6 @@
             </div>
         </div>
     </section>
-
-
     <section class="image3 cid-siiZuSvcvF" id="image3-2d">
         <div class="container">
             <div class="row justify-content-center">
@@ -272,7 +306,6 @@
             </div>
         </div>
     </section>
-
     <section class="image3 cid-sivcaTjRya" id="image3-63">
         <div class="container">
             <div class="row justify-content-center">
@@ -292,8 +325,8 @@
                 <div class="col-12">
                     <ul class="nav nav-pills mb-3" role="tablist" id="logoTab1" aria-orientation="vertical">
                         <li class="nav-item first mbr-fonts-style ">
-                            <a class="nav-link mbr-fonts-style display-7 active" role="tab" data-toggle="pill" href="#CLAN"
-                                aria-selected="true"><strong>CLAN, Delhi</strong></a>
+                            <a class="nav-link mbr-fonts-style display-7 active" role="tab" data-toggle="pill"
+                                href="#CLAN" aria-selected="true"><strong>CLAN, Delhi</strong></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link mbr-fonts-style display-7" role="tab" data-toggle="pill" href="#GNG"
@@ -305,7 +338,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link mbr-fonts-style display-7" role="tab" data-toggle="pill" href="#LANGP"
-                                aria-selected="true"><strong>LANGP, Latin America</strong></a>
+                                aria-selected="true"><strong>Latin American Network of Care Leavers</strong></a>
                         </li>
                         <li class="nav-item" role="presentation">
                             <a class="nav-link mbr-fonts-style display-7" role="tab" data-toggle="pill" href="#SOS"
@@ -436,9 +469,12 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <p class="mbr-text mbr-fonts-style display-7">
-                                        Latin American Network of Graduates of Protection is a group of Latin American
-                                        organizations that work to improve the lives of all adolescents and young people
-                                        who live or lived in state care devices.</p>
+                                        The Latin American Network of Care Leavers (LATAM) is a coalition of Latin
+                                        American organizations working to improve the lives of adolescents and youth who
+                                        live or lived in Child Protection Systems. The Network was founded in 2014 and
+                                        since then has grown to have 24 member organizations across 11 countries in the
+                                        region (Argentina, Bolivia, Brazil, Chile, Colombia, Ecuador, Guatemala, Mexico,
+                                        Paraguay, Perú, and Uruguay).</p>
                                 </div>
                             </div>
                         </div>
@@ -500,23 +536,54 @@
 
     </section>
 
-<style>
-.organisers .nav-item{
-    display: block;
-    width: 100%;
-    line-height: 1;
-}
+    <style>
+        .organisers .nav-item {
+            display: block;
+            width: 100%;
+            line-height: 1;
+        }
 
-.organisers .nav-item a {
-    padding: 0 20px;
-}
+        .organisers .nav-item a {
+            padding: 0 20px;
+        }
 
-.organisers .nav-link.active{
-    padding: 0 20px;
-    background-color: #007bff;
-}
+        .organisers .nav-link.active {
+            padding: 0 20px;
+            background-color: #007bff;
+        }
 
-</style>
+        .reports-container ol {
+            counter-reset: item;
+            margin: 0;
+            padding-left: 0;
+        }
+
+        .reports-container ol>li {
+            counter-increment: item;
+            list-style: none inside;
+            margin: 20px 0;
+            overflow: hidden;
+            font-size: 20px !important;
+            line-height: 2;
+        }
+
+        .reports-container ol>li:before {
+            content: counter(item);
+            margin-right: 20px;
+            padding: 8px;
+            display: block;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+            width: 38px;
+            background: #f1921c;
+            color: #fff;
+            text-align: center;
+            font: 20px 'Lato', Helvetica, Arial, sans-serif;
+            font-weight: 100;
+            float: left;
+        }
+    </style>
     <script src="assets/web/assets/jquery/jquery.min.js"></script>
     <script src="assets/popper/popper.min.js"></script>
     <script src="assets/tether/tether.min.js"></script>
