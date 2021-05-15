@@ -185,18 +185,19 @@
                     "url": "https://us02web.zoom.us/meeting/register/tZ0kceypqT0uH9LWVi3b9gwlSjIWSbX4YRwB"
                 },
                 "desc": "Global Care Leavers' Community Cafes is for everyone to talk. Please join us.",
+                "showPrev": true,
                 "dates": [
                     {
                         "d": new Date("2021-02-28T13:30:00.000Z"),
-                        "report": "OnlineCareLeaversCafe_1_report.pdf"
+                        "report": ""
                     },
                     {
                         "d": new Date("2021-03-28T13:30:00.000Z"),
-                        "report": "OnlineCareLeaversCafe_2_report.pdf"
+                        "report": ""
                     },
                     {
                         "d": new Date("2021-04-25T13:30:00.000Z"),
-                        "report": "OnlineCareLeaversCafe_3_report.pdf"
+                        "report": ""
                     },
                     {
                         "d": new Date("2021-05-30T13:30:00.000Z"),
@@ -210,6 +211,27 @@
                         "d": new Date("2021-07-25T13:30:00.000Z"),
                         "report": ""
                     },
+                ]
+            },
+            {
+                "name": "Global Care Leavers' Community Cafes Reports",
+                "img": "assets/images/events/cafe_past.jpg",
+                "link": null,
+                "desc": "Reports from previous Global Care Leavers' Community Cafes.",
+                "showPrev": false,
+                "dates": [
+                    {
+                        "d": new Date("2021-02-28T13:30:00.000Z"),
+                        "report": "OnlineCareLeaversCafe_1_report.pdf"
+                    },
+                    {
+                        "d": new Date("2021-03-28T13:30:00.000Z"),
+                        "report": "OnlineCareLeaversCafe_2_report.pdf"
+                    },
+                    {
+                        "d": new Date("2021-04-25T13:30:00.000Z"),
+                        "report": "OnlineCareLeaversCafe_3_report.pdf"
+                    }
                 ]
             }
         ];
@@ -246,6 +268,8 @@
             if (previous != null && previous.length > 0) {
                 var toDates = previous.length > 3 ? 3 : previous.length;
                 var dates = [];
+                if (e.showPrev)
+                    dates.push($("<b>").append("Previous : "));
                 for (var n = 0; n < previous.length; n++) {
 
                     var name = previous[n].d.toLocaleString('default', dateOptions);
@@ -257,7 +281,7 @@
                     dates.push(a);
                 }
                 if (dates.length > 0)
-                    body.append($("<div>").append($("<b>").append("Previous : "), dates));
+                    body.append($("<div>").append(dates));
             }
             wrapper.append(body);
             $('#events').append($("<div>").addClass('card p-3 col-12 col-md-6 col-lg-4').append(wrapper));
