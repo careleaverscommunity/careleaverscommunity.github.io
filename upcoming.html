@@ -25,6 +25,7 @@
     <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css">
     <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
 </head>
+
 <body>
     <section class="menu menu2 cid-sihOEHE7SH" once="menu" id="menu2-1d">
 
@@ -185,12 +186,30 @@
                 },
                 "desc": "Global Care Leavers' Community Cafes is for everyone to talk. Please join us.",
                 "dates": [
-                    new Date("2021-02-28T13:30:00.000Z"),
-                    new Date("2021-03-28T13:30:00.000Z"),
-                    new Date("2021-04-25T13:30:00.000Z"),
-                    new Date("2021-05-30T13:30:00.000Z"),
-                    new Date("2021-06-27T13:30:00.000Z"),
-                    new Date("2021-07-25T13:30:00.000Z")
+                    {
+                        "d": new Date("2021-02-28T13:30:00.000Z"),
+                        "report": "OnlineCareLeaversCafe_1_report.pdf"
+                    },
+                    {
+                        "d": new Date("2021-03-28T13:30:00.000Z"),
+                        "report": "OnlineCareLeaversCafe_2_report.pdf"
+                    },
+                    {
+                        "d": new Date("2021-04-25T13:30:00.000Z"),
+                        "report": "OnlineCareLeaversCafe_3_report.pdf"
+                    },
+                    {
+                        "d": new Date("2021-05-30T13:30:00.000Z"),
+                        "report": ""
+                    },
+                    {
+                        "d": new Date("2021-06-27T13:30:00.000Z"),
+                        "report": ""
+                    },
+                    {
+                        "d": new Date("2021-07-25T13:30:00.000Z"),
+                        "report": ""
+                    },
                 ]
             }
         ];
@@ -201,38 +220,44 @@
         for (var i = 0; i < events.length; i++) {
             var e = events[i];
             var today = new Date();
-            var previous = e.dates.filter(function (d) { return d < today; }).sort().reverse();
-            var next = e.dates.filter(function (d) { return d > today; }).sort();
-            
+            var previous = e.dates.filter(function (d) { return d.d < today; }).reverse();
+            var next = e.dates.filter(function (d) { return d.d > today; });
+
             var wrapper = $("<div>").addClass('card-wrapper');
-            var image = $("<div>").addClass("card-img").append($("<img>").prop('src',e.img));
+            var image = $("<div>").addClass("card-img").append($("<img>").prop('src', e.img));
             wrapper.append(image);
 
-            var body = $("<div>").addClass("body").prop('style','padding: 10px;').append($("<h4>").append(e.name).prop('style', 'color:#FFF;'))
-            .append($("<div>").append(e.desc));
-            if(next!=null && next.length > 0)
-                body.append($("<div>").append("<b>Upcoming : </b> <span style='font-weight:bold;color:#FFF;'>" + next[0].toLocaleString('default',{ year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: "2-digit" }) + "</span>"));
-            if(e.link !=null && e.link.text != "")
-                body.append($("<div>").prop('style','text-align:center;padding:10px;').append($("<a>").addClass('btn btn-md btn-info display-4').append(e.link.text).prop('href',e.link.url).prop('style', 'font-weight:bold;font-size:1.2em')));
-            if(next!=null && next.length > 1){
+            var body = $("<div>").addClass("body").prop('style', 'padding: 10px;').append($("<h4>").append(e.name).prop('style', 'color:#FFF;'))
+                .append($("<div>").append(e.desc));
+            if (next != null && next.length > 0)
+                body.append($("<div>").append("<b>Upcoming : </b> <span style='font-weight:bold;color:#FFF;'>" + next[0].d.toLocaleString('default', { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: "2-digit" }) + "</span>"));
+            if (e.link != null && e.link.text != "")
+                body.append($("<div>").prop('style', 'text-align:center;padding:10px;').append($("<a>").addClass('btn btn-md btn-info display-4').append(e.link.text).prop('href', e.link.url).prop('style', 'font-weight:bold;font-size:1.2em')));
+            if (next != null && next.length > 1) {
                 var dates = "";
-                var toDates = next.length > 4 ? 3: next.length;
+                var toDates = next.length > 4 ? 3 : next.length;
                 for (var n = 1; n < next.length; n++) {
-                    dates = dates!= "" ? dates + ", " : "";
-                    dates += next[n].toLocaleString('default',dateOptions);
+                    dates = dates != "" ? dates + ", " : "";
+                    dates += next[n].d.toLocaleString('default', dateOptions);
                 }
-                if(dates!="")
+                if (dates != "")
                     body.append($("<div>").append("<b>Next : </b>" + dates));
             }
-            if(previous != null && previous.length > 0){
-                var toDates = previous.length > 3 ? 3: previous.length;
-                var dates = "";
+            if (previous != null && previous.length > 0) {
+                var toDates = previous.length > 3 ? 3 : previous.length;
+                var dates = [];
                 for (var n = 0; n < previous.length; n++) {
-                    dates = dates!= "" ? dates + ", " : "";
-                    dates += previous[n].toLocaleString('default',dateOptions);
+
+                    var name = previous[n].d.toLocaleString('default', dateOptions);
+                    if (previous[n].report != "")
+                        name += ' Report'
+                    var a = $("<a>").append(name).prop('style', 'color:#FFF;display: inline-block;padding: 0 9px; margin: 5px;');
+                    if (previous[n].report != "")
+                        a.addClass('btn btn-md btn-success').prop('href', 'assets/files/cafe/' + previous[n].report);
+                    dates.push(a);
                 }
-                if(dates!="")
-                    body.append($("<div>").append("<b>Previous : </b>" + dates));
+                if (dates.length > 0)
+                    body.append($("<div>").append($("<b>").append("Previous : "), dates));
             }
             wrapper.append(body);
             $('#events').append($("<div>").addClass('card p-3 col-12 col-md-6 col-lg-4').append(wrapper));
