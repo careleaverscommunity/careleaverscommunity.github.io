@@ -383,8 +383,8 @@
     for (var i = 0; i < events.length; i++) {
       var e = events[i];
       var today = new Date();
-      var previous = e.dates.filter(function (d) { return d < today; }).sort().reverse();
-      var next = e.dates.filter(function (d) { return d > today; }).sort();
+      var previous = e.dates.filter(function (d) { return d < today; }).reverse();
+      var next = e.dates.filter(function (d) { return d > today; });
 
       var wrapper = $("<div>").addClass('card-wrapper');
       var image = $("<div>").addClass("card-img").append($("<img>").prop('src', e.img));
